@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backyellow"
+    tools:context="com.foa.orderfood.FoodList">
+
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#FFC107"
+        app:mt_hint="Tìm kiếm món ăn"
+        app:mt_speechMode="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_food"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchBar"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>
