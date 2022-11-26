@@ -38,6 +38,7 @@ public class Cart extends AppCompatActivity implements CartAdapter.OnItemClickLi
     Button btnPlace, btnxoa;
     CartAdapter adapter;
     List<Order> cart = new ArrayList<>();
+    Cart cart1;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +107,7 @@ public class Cart extends AppCompatActivity implements CartAdapter.OnItemClickLi
 
     private void loadListDocument() {
         cart = new Database(this).getCarts();
+
         adapter = new CartAdapter(cart, this,this);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
