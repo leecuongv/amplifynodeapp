@@ -1,9 +1,18 @@
 package com.foa.orderfood;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.andremion.counterfab.CounterFab;
+import com.foa.orderfood.Database.Database;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +36,7 @@ import com.foa.orderfood.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rengwuxian.materialedittext.MaterialEditText;
 import com.squareup.picasso.Picasso;
 
 import io.paperdb.Paper;
@@ -37,6 +49,12 @@ public class Home extends AppCompatActivity
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
     FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
+    CounterFab fab;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fab.setCount(new Database(this).getCountCart());
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +66,7 @@ public class Home extends AppCompatActivity
 
         Paper.init(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (CounterFab) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +74,7 @@ public class Home extends AppCompatActivity
                 startActivity(intentCart);
             }
         });
-
+        fab.setCount(new Database(this).getCountCart());
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -164,11 +182,37 @@ public class Home extends AppCompatActivity
             this.finishAffinity();
        // } //else if (id == R.id.nav_share) {
 
-        }// else if (id == R.id.nav_send) {
+        }
+        // else if (id == R.id.nav_send) {
 
        // }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void showHomeAddressDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Home.this);
+        alertDialog.setTitle("Thay đổi địa chỉ nhà");
+        alertDialog.setMessage("Vui lòng điền thông tin");
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        alertDialog.setPositiveButton("Cập nhật", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                FirebaseDatabase.getInstance().getReference("User")
+                        .child(Common.currentUser.getPhone())
+                        .setValue(Common.currentUser)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Toast.makeText(Home.this,"Cập nhật địa chỉ thành công", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
     }
 }

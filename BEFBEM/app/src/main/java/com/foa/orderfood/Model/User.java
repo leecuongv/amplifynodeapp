@@ -5,6 +5,7 @@ package com.foa.orderfood.Model;
 public class User {
     private  String Name;
     private  String Password,Phone,IsStaff;
+    private String homeAddress;
 
     public String getIsStaff() {
         return IsStaff;
@@ -45,5 +46,13 @@ public class User {
         Name = name;
         Password = password;
         IsStaff = "false";
+    }
+
+    public String getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
     }
 }

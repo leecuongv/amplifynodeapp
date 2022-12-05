@@ -5,12 +5,18 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.foa.orderfood.Model.User;
-
-
+import com.foa.orderfood.Remote.IGoogleService;
+import com.foa.orderfood.Remote.RetrofitClient;
 
 
 public class Common {
     public static User currentUser;
+    private static final String GOOGLE_API_URL = "https://maps.googleapis.com/";
+    private static final String BASE_URL = "https://maps.googleapis.com/";
+
+    public static IGoogleService getGoogleMapAPI(){
+        return RetrofitClient.getGoogleClient(GOOGLE_API_URL).create(IGoogleService.class);
+    }
 
     public static String convertCodeToStatus(String status) {
         if (status.equals("0"))

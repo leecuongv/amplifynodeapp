@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.foa.orderfood.Database.Database;
 import com.foa.orderfood.Interface.ItemClickListener;
 import com.foa.orderfood.Model.Food;
+import com.foa.orderfood.Model.Order;
 import com.foa.orderfood.ViewHolder.FoodViewHolder;
 import com.facebook.CallbackManager;
 import com.facebook.share.model.SharePhoto;
@@ -191,6 +192,20 @@ public class FoodList extends AppCompatActivity {
                 Picasso.with(getBaseContext()).load(model.getImage()).into(viewHolder.food_image);
                 if (localDB.isFavorites(adapter.getRef(position).getKey()))
                     viewHolder.fav_image.setImageResource(R.drawable.ic_favorite_black_24dp);
+
+                viewHolder.quick_cart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new Database(getBaseContext()).addToCart(new Order(
+                                adapter.getRef(position).getKey(),
+                                model.getName(),
+                                "1",
+                                model.getPrice(),
+                                model.getDiscount()
+                        ));
+                        Toast.makeText(FoodList.this, "Add to Cart",Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 viewHolder.fav_image.setOnClickListener(new View.OnClickListener() {
                     @Override

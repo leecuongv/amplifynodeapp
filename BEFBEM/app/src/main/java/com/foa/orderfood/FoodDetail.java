@@ -4,6 +4,8 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.andremion.counterfab.CounterFab;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +41,8 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
     CollapsingToolbarLayout collapsingToolbarLayout;
     TextView food_name,food_price,food_description,txtRating;
     ImageView food_image;
-    FloatingActionButton btnRating,btnMua;
+    FloatingActionButton btnRating;
+    CounterFab btnMua;
     RatingBar ratingBar;
     String foodId="";
     FirebaseDatabase database;
@@ -69,7 +72,7 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
                 showRatingDialog();
             }
         });
-        btnMua =  findViewById(R.id.btnCart);
+        btnMua = (CounterFab) findViewById(R.id.btnCart);
         btnMua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +88,7 @@ public class FoodDetail extends AppCompatActivity implements RatingDialogListene
             }
 
         });
-
+        btnMua.setCount(new Database(this).getCountCart());
         if (getIntent()!=null)
             foodId = getIntent().getStringExtra("FoodId");
         if (!foodId.isEmpty()){
