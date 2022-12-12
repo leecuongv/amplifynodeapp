@@ -4,6 +4,43 @@ package com.foa.orderfood.Model;
 
 public class Order {
     private String ProductId,ProductName,Quantity,Price,Discount,status;
+    private String Image;
+
+
+    public Order(String productId, String productName, String quantity, String price, String discount, String status, String image) {
+        ProductId = productId;
+        ProductName = productName;
+        Quantity = quantity;
+        Price = price;
+        Discount = discount;
+        this.status = status;
+        Image = image;
+    }
+
+    public Order(String productId, String productName, String quantity, String price, String discount, String image) {
+        ProductId = productId;
+        ProductName = productName;
+        Quantity = quantity;
+        Price = price;
+        Discount = discount;
+        Image = image;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
 
     public Order(String productId, String productName, String quantity, String price, String discount) {
         ProductId = productId;

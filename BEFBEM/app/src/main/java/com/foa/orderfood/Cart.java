@@ -1,6 +1,8 @@
 package com.foa.orderfood;
 
 import android.content.DialogInterface;
+import android.location.Location;
+import android.location.LocationRequest;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,11 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +25,9 @@ import com.foa.orderfood.Common.Common;
 import com.foa.orderfood.Database.Database;
 import com.foa.orderfood.Model.Order;
 import com.foa.orderfood.Model.Request;
+import com.foa.orderfood.Remote.IGoogleService;
 import com.foa.orderfood.ViewHolder.CartAdapter;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -38,10 +45,24 @@ public class Cart extends AppCompatActivity implements CartAdapter.OnItemClickLi
     Button btnPlace, btnxoa;
     CartAdapter adapter;
     List<Order> cart = new ArrayList<>();
+    Cart cart1;
+
+    private LocationRequest mLocationRequest;
+    private GoogleApiClient mGoogleApiClient;
+    private Location mLastLocation;
+    private static final int UPDATE_INTERVAL =5000;
+    private static final int FATEST_INTERVAL = 3000;
+    private static final int DISPLACEMENT = 10;
+    private static final int LOCATION_REQUEST_CODE = 9999;
+    private static final int PLAY_SERVICES_REQUEST = 9997;
+    IGoogleService mGoogleMapService;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+        mGoogleMapService = Common.getGoogleMapAPI();
+
         database = FirebaseDatabase.getInstance();
         requests = database.getReference("Requests");
 
@@ -66,6 +87,8 @@ public class Cart extends AppCompatActivity implements CartAdapter.OnItemClickLi
         loadListDocument();
     }
     private void showAlertDialog() {
+        LayoutInflater inflater = this.getLayoutInflater();
+
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(Cart.this);
         alertDialog.setTitle("Quý khách vui lòng chú ý điện thoại để cửa hàng tiện liên lạc!");
 
@@ -76,6 +99,20 @@ public class Cart extends AppCompatActivity implements CartAdapter.OnItemClickLi
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
         edtAddress.setLayoutParams(lp);
+
+
+//        rdiShipToAddress.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if(isChecked)
+//                {
+//                    mGoogleMapService.getAddressName("https://map.googleapis.com/maps/api/geocode/json?latlng=16.0680,108.2130&sensor=false"
+//                            );
+//
+//                }
+//            }
+//        });
+
         alertDialog.setView(edtAddress);
         alertDialog.setIcon(R.drawable.ic_shopping_cart_black_24dp);
         alertDialog.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
@@ -106,6 +143,7 @@ public class Cart extends AppCompatActivity implements CartAdapter.OnItemClickLi
 
     private void loadListDocument() {
         cart = new Database(this).getCarts();
+
         adapter = new CartAdapter(cart, this,this);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);

@@ -12,9 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
+import com.foa.orderfood.Cart;
 import com.foa.orderfood.Common.Common;
 import com.foa.orderfood.Model.Order;
 import com.foa.orderfood.R;
+import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -31,12 +33,15 @@ class CartViewHolder extends RecyclerView.ViewHolder implements View.OnCreateCon
     public ImageView imd_cart_count;
     private CartAdapter.OnItemClickListener itemClickListener;
     private Button btnXoa;
+    public ImageView cart_Image;
+
 
     public CartViewHolder(View itemView, CartAdapter.OnItemClickListener onItemClickListener) {
         super(itemView);
         txt_cart_name = itemView.findViewById(R.id.cart_item_name);
         txt_price = itemView.findViewById(R.id.cart_item_price);
         imd_cart_count = itemView.findViewById(R.id.cart_item_count);
+        cart_Image = (ImageView) itemView.findViewById(R.id.cart_image);
         this.itemClickListener = onItemClickListener;
         itemView.setOnCreateContextMenuListener(this);
 
@@ -59,6 +64,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
     private List<Order> listData = new ArrayList<>();
     private Context context;
     private OnItemClickListener onItemClickListener;
+    private Cart cart;
 
     public CartAdapter(List<Order> listData, Context context, OnItemClickListener onItemClickListener) {
         this.listData = listData;
@@ -75,6 +81,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
 
     @Override
     public void onBindViewHolder(CartViewHolder holder, int position) {
+        Picasso.with(context)
+                .load(listData.get(position).getImage())
+                .resize(70,70)
+                .centerCrop()
+                .into(holder.cart_Image);
+
+
+
         TextDrawable drawable = TextDrawable.builder().buildRound("" + listData.get(position).getQuantity(), Color.RED);
         holder.imd_cart_count.setImageDrawable(drawable);
 

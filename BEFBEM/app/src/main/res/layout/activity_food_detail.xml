@@ -42,7 +42,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.andremion.counterfab.CounterFab
         android:id="@+id/btnCart"
         app:backgroundTint="@color/subColor"
         app:elevation="6dp"
@@ -85,7 +85,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/shape">
 
                     <TextView
 
@@ -149,7 +150,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <RatingBar
                         android:id="@+id/ratingBar"
