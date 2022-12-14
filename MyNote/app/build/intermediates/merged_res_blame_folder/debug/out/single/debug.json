@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\menu_popup_menu.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\menu\\popup_menu.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_more.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_more.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_done.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_done.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\anim_recycler_anim.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\anim\\recycler_anim.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_back.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\menu_home_menu.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\menu\\home_menu.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_add.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_pin.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_pin.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_save.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_save.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\layout_note_list.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\layout\\note_list.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_note.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_note.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\anim_layout_recycler_anim.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\anim\\layout_recycler_anim.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\xml_backup_rules.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_note_taker.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\layout\\activity_note_taker.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "E:\\Learning\\Git\\MyNote\\app\\build\\intermediates\\merged_res\\debug\\xml_data_extraction_rules.xml.flat",
+        "source": "E:\\Learning\\Git\\MyNote\\app\\src\\main\\res\\xml\\data_extraction_rules.xml"
+    }
+]
